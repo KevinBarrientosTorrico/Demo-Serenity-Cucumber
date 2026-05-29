@@ -5,9 +5,11 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.support.FindBy;
 
 public class ValidationPage extends PageObject {
-    @FindBy(xpath = "//div[@class='product_label']")
-    protected WebElementFacade lbl_product;
-    @FindBy(css="h3[data-test='error']")
-    protected WebElementFacade lbl_errorMessage;
 
+    // ✅ Selector corregido - SauceDemo usa data-test="title"
+    @FindBy(css = "[data-test='title']")
+    protected WebElementFacade lbl_product;
+
+    @FindBy(css = "h3[data-test='error']")
+    protected WebElementFacade lbl_errorMessage;
 }
